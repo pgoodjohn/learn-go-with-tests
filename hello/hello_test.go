@@ -12,7 +12,7 @@ func TestHello(t *testing.T) {
 	}
 
 	t.Run("saying hello to people", func(t *testing.T) {
-		actual := Hello("Pietro")
+		actual := Hello("Pietro", "")
 		expected := "Hello, Pietro"
 
 		assertCorrectMessage(t, expected, actual)
@@ -20,7 +20,7 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("say hello world when there is no person", func(t *testing.T) {
-		actual := Hello("")
+		actual := Hello("", "")
 		expected := "Hello, World"
 
 		assertCorrectMessage(t, expected, actual)
