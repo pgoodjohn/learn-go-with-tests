@@ -11,6 +11,10 @@ func TestRepeat(t *testing.T) {
 			t.Errorf("Expected: %s, actual: %s", expected, actual)
 		}
 	})
+
+	t.Run("repeatCount 0 returns empty string", func(t *testing.T) {
+		t.Skip("To be implemented")
+	})
 }
 
 func BenchmarkRepeat(b *testing.B) {
