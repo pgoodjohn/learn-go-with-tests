@@ -4,7 +4,7 @@ import "testing"
 
 func TestRepeat(t *testing.T) {
 	t.Run("letter is repeated 5 times", func(t *testing.T) {
-		actual := Repeat("a")
+		actual := Repeat("a", 5)
 		expected := "aaaaa"
 
 		if expected != actual {
