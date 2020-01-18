@@ -13,7 +13,12 @@ func TestRepeat(t *testing.T) {
 	})
 
 	t.Run("repeatCount 0 returns empty string", func(t *testing.T) {
-		t.Skip("To be implemented")
+		actual := Repeat("a", 0)
+		expected := ""
+
+		if expected != actual {
+			t.Errorf("Expected: %s, actual: %s", expected, actual)
+		}
 	})
 }
 
