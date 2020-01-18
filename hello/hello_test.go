@@ -34,7 +34,10 @@ func TestHello(t *testing.T) {
 	})
 
 	t.Run("say hello in french for international audience", func(t *testing.T) {
-		t.Skip("To be implemented")
+		actual := Hello("Pierre", "French")
+		expected := "Bonjour, Pierre"
+
+		assertCorrectMessage(t, expected, actual)
 	})
 
 }
