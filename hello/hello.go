@@ -11,21 +11,27 @@ const englishHelloPrefix = "Hello, "
 const spanishHelloPrefix = "Hola, "
 const frenchHelloPrefix = "Bonjour, "
 
-// Hello is our domain, we want to separate it from the outside world
-func Hello(name string, language string) string {
-	if name == "" {
-		name = "World"
-	}
-
-	prefix := englishHelloPrefix
+func getPrefixForLanguage(language string) (prefix string) {
 
 	switch language {
 	case french:
 		prefix = frenchHelloPrefix
 	case spanish:
 		prefix = spanishHelloPrefix 
+	default:
+		prefix = englishHelloPrefix
 	}
-	return prefix + name
+
+	return 
+}
+
+// Hello is our domain, we want to separate it from the outside world
+func Hello(name string, language string) string {
+	if name == "" {
+		name = "World"
+	}
+
+	return getPrefixForLanguage(language) + name
 
 }
 
