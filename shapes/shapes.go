@@ -25,3 +25,8 @@ func (c Circle) Perimeter() (perimeter float64) {
 	perimeter = math.Pi * c.Radius
 	return
 }
+
+func (c Circle) Area() (area float64) {
+	area = math.Pi * c.Radius * c.Radius
+	return
+}
