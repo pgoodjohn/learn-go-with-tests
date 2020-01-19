@@ -16,7 +16,7 @@ func TestPerimeter(t *testing.T) {
 	t.Run("perimeter of a circle is pi * r", func(t *testing.T) {
 		circle := Circle{10}
 		actual := circle.Perimeter()
-		expected := 314.1592653589793
+		expected := 31.41592653589793
 
 		if expected != actual {
 			t.Errorf("Expected: %g, actual: %g", expected, actual)
