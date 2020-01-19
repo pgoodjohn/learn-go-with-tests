@@ -46,5 +46,6 @@ func (t Triangle) Perimeter() (perimeter float64) {
 }
 
 func (t Triangle) Area() (area float64) {
+	area = t.Base * t.Height / 2
 	return
 }
