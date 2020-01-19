@@ -34,4 +34,8 @@ func TestArea(t *testing.T) {
 			t.Errorf("Expected: %.2f, actual: %.2f", expected, actual)
 		}
 	})
+
+	t.Run("area of circle is pi * r * r", func(t *testing.T) {
+	t.Skip("To be implemented")
+	})
 }
