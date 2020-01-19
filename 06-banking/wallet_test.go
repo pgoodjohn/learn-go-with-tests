@@ -17,6 +17,15 @@ func TestWallet(t *testing.T) {
 	})
 
 	t.Run("withdrawn value is removed from balance", func(t *testing.T) {
-		t.Skip("To be implemented")
+		wallet := Wallet{balance: Bitcoin(20)}
+
+		wallet.Withdraw(Bitcoin(10))
+
+		expected := Bitcoin(10)
+		actual := wallet.Balance()
+
+		if expected != actual {
+			t.Errorf("Expected: %s, actual: %s", expected, actual) 
+		}
 	})
 }
