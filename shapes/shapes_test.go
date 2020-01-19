@@ -16,7 +16,7 @@ func TestPerimeter(t *testing.T) {
 
 func TestArea(t *testing.T) {
 	t.Run("area of rectangle is b x h", func(t *testing.T) {
-		rectangle := Rectangle(12.0, 6.0)
+		rectangle := Rectangle{12.0, 6.0}
 		actual := Area(rectangle)
 		expected := 72.0
 
