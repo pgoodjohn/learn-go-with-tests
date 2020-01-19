@@ -26,6 +26,14 @@ func TestWallet(t *testing.T) {
 	})
 
 	t.Run("withdrawing more than available balance is not allowed", func(t *testing.T) {
-		t.Skip("To be implemented")
+		startingBalance := Bitcoin(20)
+		wallet := Wallet{startingBalance}
+		err := wallet.Withdraw(Bitcoin(100))
+
+		assertWalletBalance(t, wallet, startingBalance)
+
+		if err == nil {
+			t.Error("Expected error but got nil")
+		}
 	})
 }
