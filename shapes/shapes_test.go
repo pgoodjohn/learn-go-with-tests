@@ -15,6 +15,11 @@ func TestPerimeter(t *testing.T) {
 
 func TestArea(t *testing.T) {
 	t.Run("area of rectangle is b x h", func(t *testing.T) {
-		t.Skip("To be implemented")
+		actual := Area(12.0, 6.0)
+		expected := 72.0
+
+		if expected != actual {
+			t.Errorf("Expected: %.2f, actual: %.2f", expected, actual)
+		}
 	})
 }
