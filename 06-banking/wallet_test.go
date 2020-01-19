@@ -20,6 +20,12 @@ func assertError(t *testing.T, expected error, actual error) {
 	}
 }
 
+func assretNoError(t *testing.T, actual error) {
+	t.Helper()
+	if actual != nil {
+		t.Errorf("Expected nil, actual %q", actual)
+	}
+}
 
 func TestWallet(t *testing.T) {
 
@@ -33,8 +39,9 @@ func TestWallet(t *testing.T) {
 
 	t.Run("withdrawn value is removed from balance", func(t *testing.T) {
 		wallet := Wallet{balance: Bitcoin(20)}
-		wallet.Withdraw(Bitcoin(10))
+		err := wallet.Withdraw(Bitcoin(10))
 		assertWalletBalance(t, wallet, Bitcoin(10))
+		assretNoError(t, err)
 	})
 
 	t.Run("withdrawing more than available balance is not allowed", func(t *testing.T) {
