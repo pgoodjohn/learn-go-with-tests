@@ -4,7 +4,8 @@ import "testing"
 
 func TestPerimeter(t *testing.T) {
 	t.Run("perimeter of rectangle is 2b + 2h", func(t *testing.T) {
-		actual := Perimeter(10.0, 10.0)
+		rectangle := Rectangle{10.0, 10.0}
+		actual := Perimeter(rectangle)
 		expected := 40.0
 
 		if expected != actual {
@@ -15,7 +16,8 @@ func TestPerimeter(t *testing.T) {
 
 func TestArea(t *testing.T) {
 	t.Run("area of rectangle is b x h", func(t *testing.T) {
-		actual := Area(12.0, 6.0)
+		rectangle := Rectangle(12.0, 6.0)
+		actual := Area(rectangle)
 		expected := 72.0
 
 		if expected != actual {
