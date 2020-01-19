@@ -36,6 +36,12 @@ func TestArea(t *testing.T) {
 	})
 
 	t.Run("area of circle is pi * r * r", func(t *testing.T) {
-	t.Skip("To be implemented")
+		circle := Circle{10} 
+		actual := circle.Area()
+		expected := 314.1592653589793
+
+		if expected != actual {
+			t.Errorf("Expected: %g, actual: %g", expected, actual)
+		}
 	})
 }
