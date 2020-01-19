@@ -12,6 +12,10 @@ func TestPerimeter(t *testing.T) {
 			t.Errorf("Expected: %.2f, actual: %.2f", expected, actual)
 		}
 	})
+
+	t.Run("perimeter of a circle is pi * r", func(t *testing.T) {
+	t.Skip("To be implemented")
+	})
 }
 
 func TestArea(t *testing.T) {
