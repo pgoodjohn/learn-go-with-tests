@@ -10,6 +10,18 @@ func assertStringsEqual(t *testing.T, expected string, actual string) {
 	}
 }
 
+func assertError(t *testing.T, expected, actual error) {
+	t.Helper()
+
+	if expected == nil {
+		t.Errorf("Expected: error, actual: nil") 
+	}
+
+	if expected != actual {
+		t.Errorf("Expected: %q, actual: %q", expected, actual) 
+	}
+}
+
 func TestSerach(t *testing.T) {
 	dictionary := Dictionary{"test": "this is just a test"}
 
@@ -23,13 +35,8 @@ func TestSerach(t *testing.T) {
 
 	t.Run("unknown word returns error", func(t *testing.T) {
 		_, err := dictionary.Search("unknown")
-		expected := "could not find the word you were looking for"
 
-		if err == nil {
-			t.Fatal("Expected: err, got nil")
-		}
-
-		assertStringsEqual(t, expected, err.Error())
+		assertError(t, ErrNotFound, err)
 	})
 
 }
