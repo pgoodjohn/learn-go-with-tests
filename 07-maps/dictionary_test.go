@@ -51,7 +51,9 @@ func TestSerach(t *testing.T) {
 	})
 
 	t.Run("adding existing word returns error", func(t *testing.T) {
-		t.Skip("To be implemented")
+		actual := dictionary.Add("test", "this is just a test")
+
+		assertError(t, ErrWordExists, actual)
 	})
 
 }
