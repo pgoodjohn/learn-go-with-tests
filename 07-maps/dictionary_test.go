@@ -50,4 +50,8 @@ func TestSerach(t *testing.T) {
 		assertStringsEqual(t, expected, actual)
 	})
 
+	t.Run("adding existing word returns error", func(t *testing.T) {
+		t.Skip("To be implemented")
+	})
+
 }
