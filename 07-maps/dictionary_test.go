@@ -2,6 +2,14 @@ package dictionary
 
 import "testing"
 
+func assertStringsEqual(t *testing.T, expected string, actual string) {
+	t.Helper()
+
+	if expected != actual {
+		t.Errorf("Expected: %q, actual: %q", expected, actual) 
+	}
+}
+
 func TestSerach(t *testing.T) {
 
 	t.Run("test finds this is just a test", func(t *testing.T) {
@@ -10,9 +18,7 @@ func TestSerach(t *testing.T) {
 		actual := Search(dictionary, "test")
 		expected := "this is just a test"
 
-		if expected != actual {
-			t.Errorf("Expected: %q, actual: %q", expected, actual)
-		}
+		assertStringsEqual(t, expected, actual)
 	})
 
 }
