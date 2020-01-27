@@ -40,7 +40,14 @@ func TestSerach(t *testing.T) {
 	})
 
 	t.Run("added word is remembered", func(t *testing.T) {
-		t.Skip("To be implemented")
+		dictionary := Dictionary{}
+
+		dictionary.Add("added", "is remembered")
+
+		expected := "is remembered"
+		actual, _ := dictionary.Search("added")
+
+		assertStringsEqual(t, expected, actual)
 	})
 
 }
