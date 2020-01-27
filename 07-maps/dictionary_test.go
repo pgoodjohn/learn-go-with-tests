@@ -39,4 +39,8 @@ func TestSerach(t *testing.T) {
 		assertError(t, ErrNotFound, err)
 	})
 
+	t.Run("added word is remembered", func(t *testing.T) {
+		t.Skip("To be implemented")
+	})
+
 }
