@@ -21,4 +21,8 @@ func TestSerach(t *testing.T) {
 		assertStringsEqual(t, expected, actual)
 	})
 
+	t.Run("unknown word returns error", func(t *testing.T) {
+		t.Skip("To be implemented")
+	})
+
 }
