@@ -1,11 +1,17 @@
 package dictionary
 
-import "errors"
-
 type Dictionary map[string]string
 
-var ErrNotFound = errors.New("could not find the word you were looking for")
-var ErrWordExists = errors.New("could not find the word you were looking for")
+const (
+	ErrNotFound   = DictionaryErr("could not find the word you were looking for")
+	ErrWordExists = DictionaryErr("could not find the word you were looking for")
+)
+
+type DictionaryErr string
+
+func (e DictionaryErr) Error() string {
+	return string(e)
+}
 
 func (d Dictionary) Search(word string) (string, error) {
 
