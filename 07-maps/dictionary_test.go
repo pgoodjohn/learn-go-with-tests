@@ -96,4 +96,12 @@ func TestSerach(t *testing.T) {
 
 		assertError(t, ErrNotFound, actual)
 	})
+
+	t.Run("deleting a word that does not exist returns an error", func(t *testing.T) {
+		word := "random"
+
+		actual := dictionary.Delete(word)
+
+		assertError(t, ErrWordAlreadyMissing, actual)
+	})
 }
