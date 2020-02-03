@@ -85,4 +85,15 @@ func TestSerach(t *testing.T) {
 
 		assertError(t, ErrWordDoesNotExist, actual)
 	})
+
+	t.Run("deleting a word removes it from the dictionary", func(t *testing.T) {
+		t.Skip("To be implemented")
+		word := "test"
+
+		dictionary.Delete(word)
+
+		_, actual := dictionary.Search(word)
+
+		assertError(t, ErrNotFound, actual)
+	})
 }
