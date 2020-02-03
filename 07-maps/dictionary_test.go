@@ -77,4 +77,12 @@ func TestSerach(t *testing.T) {
 		assertNoError(t, err)
 	})
 
+	t.Run("updating a new word does not save it to the dictionary", func(t *testing.T) {
+		word := "new"
+		definition := "this is a new test"
+
+		actual := dictionary.Update(word, definition)
+
+		assertError(t, ErrWordDoesNotExist, actual)
+	})
 }
