@@ -53,5 +53,5 @@ func (d Dictionary) Update(word, definition string) error {
 }
 
 func (d Dictionary) Delete(word string) {
-	d[word] = ""
+	delete(d, word)
 }
