@@ -56,4 +56,17 @@ func TestSerach(t *testing.T) {
 		assertError(t, ErrWordExists, actual)
 	})
 
+	t.Run("updating a word saves the new definition", func(t *testing.T) {
+		word := "test"
+		expected := "this is just an updated test"
+
+		dictionary.Update(word, expected)
+
+		actual, err := d.Search(word)
+
+		assertStringsEqual(t, expected, actual)
+
+		assertError(t, err, nil)
+	})
+
 }
